@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dude</title>
+<meta charset="UTF-8" />
+<style>
+html,
+body {
+	background: #222;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	width: 100vw;
+}
+body {
+	perspective: 600px;
+}
+.dude {
+	font-size: 10px;
+	transform-origin: top center;
+	position: absolute;
+	width: 1em;
+	height: 5em;
+	top: calc(50% - 2.5em);
+	left: calc(50% - 0.5em);
+	transform-style: preserve-3d;
+	animation: slowSpin linear 12s infinite;
+}
+.dude div:before,
+.dude div:after {
+	display: block;
+	content: '';
+	position: absolute;
+}
+.dude div:before {
+	transform: rotateY(90deg);
+	width: 100% !important;
+	max-width: 2em;
+	height: 100% !important;
+	border-radius: 1em !important;
+}
+/* body */
+.dude>div:nth-child(1){
+	transform: rotateZ(-3deg);
+	width: 3em;
+	border-radius: 0.1em 0.1em 1em 1em;
+}
+/* neck */
+.dude>div>div:nth-child(1){
+	transform: rotateZ(0deg);
+	top: -0.6em;
+	left: 1em;
+	height: 0.5em;
+	transform: rotateZ(3deg);
+}
+/* head */
+.dude>div>div:nth-child(1)>div{
+	transform: rotateZ(0deg);
+	top: -4.6em;
+	left: -1em;
+	height: 4.5em;
+	width: 3.5em;
+	border-radius: 0.3em 4.5em 0.3em 0.3em;
+	transform: rotateZ(3deg);
+}
+.dude>div>div:nth-child(1)>div:before {
+	border-radius: 50% 50% 0.3em 0.3em !important;
+	width: 50% !important;
+	transform: rotateY(90deg) translateZ(-0.8em);
+}
+/* Eyes */
+.dude>div>div:nth-child(1)>div>div,
+.dude>div>div:nth-child(1)>div>div:after{	
+	height: 1.3em;
+	width: 1.2em;
+	top: 40%;
+	left: 50%;
+	background: #fff;
+	border-radius: 3em;
+	box-shadow: 0 0 1em rgba(0,0,0,0.8);
+}
+.dude>div>div:nth-child(1)>div>div:before {
+	background: #fff;
+}
+.dude>div>div:nth-child(1)>div>div:after {
+	background: #333;
+	width: 0.6em;
+	height: 0.65em;
+	top: 45%;
+	left: 55%;
+}
+/* leftArm */
+.dude>div>div:nth-child(2) {
+	right: 100%;
+	transform:rotateZ(10deg);
+	border-radius: 1em;
+	width: 50%;
+}
+/* leftForearm */
+.dude>div>div:nth-child(2)>div {
+	top: 100%;
+	transform:rotateZ(10deg);
+	border-radius: 1em;
+}
+/* leftHand */
+.dude>div>div:nth-child(2)>div>div {
+	top: 100%;
+	height:1.5em;
+	width: 1.5em;
+	border-radius: 50%;
+}
+/* rightArm */
+.dude>div>div:nth-child(3) {
+	left: 100%;
+	transform:rotateZ(-10deg);
+	border-radius: 1em;
+	width: 50%;
+}
+/* rightForearm */
+.dude>div>div:nth-child(3)>div {
+	top: 100%;
+	transform:rotateZ(-10deg);
+	border-radius: 1em;
+}
+/* rightHand */
+.dude>div>div:nth-child(3)>div>div {
+	top: 100%;
+	height:1.5em;
+	width: 1.5em;
+	border-radius: 50%;
+}
+/* tumtum */
+.dude>div>div:nth-child(4){
+	top: 100%;
+	width: 2em;
+	left: 0.5em;
+	transform: rotateZ(3deg);
+}
+/* leftLeg */
+.dude>div>div:nth-child(4)>div:nth-child(1) {
+	right: 100%;
+	top: 80%;
+	width: 70%;
+	height: 120%;
+	transform:rotateZ(10deg);
+	border-radius: 1em;
+}
+/* leftShin */
+.dude>div>div:nth-child(4)>div:nth-child(1)>div {
+	top: 100%;
+	transform:rotateZ(0deg);
+	border-radius: 1em;
+}
+/* leftFoot */
+.dude>div>div:nth-child(4)>div:nth-child(1)>div>div {
+	top: 100%;
+	height:1.5em;
+	width: 1.5em;
+	border-radius: 50%;
+}
+/* rightLeg */
+.dude>div>div:nth-child(4)>div:nth-child(2) {
+	left: 100%;
+	top: 80%;
+	width: 70%;
+	height: 120%;
+	transform:rotateZ(-10deg);
+	border-radius: 1em;
+}
+.dude:hover>div>div:nth-child(4)>div:nth-child(2) {
+	transform: rotateX(45deg);
+}
+/* rightShin */
+.dude>div>div:nth-child(4)>div:nth-child(2)>div {
+	top: 100%;
+	transform:rotateZ(0deg);		
+	border-radius: 1em;
+}
+.dude:hover>div>div:nth-child(4)>div:nth-child(2)>div {
+	transform: rotateX(-45deg);
+}
+/* rightFoot */
+.dude>div>div:nth-child(4)>div:nth-child(2)>div>div {
+	top: 100%;
+	height:1.5em;
+	width: 1.5em;
+	border-radius: 50%;
+}
+.dude div,
+.dude div:before {
+	background: rgba(200,200,200,1);
+	top: 0;
+	width: 1em;
+	height: 5em;
+	position: absolute;
+	border-radius: 0.1em;
+	transform-origin: top center !important;
+	transform-style: preserve-3d !important;
+	transition: all ease 0.3s;
+}
+.dude div:before {
+	position: relative;
+	transform-origin: center center !important;
+}
+@keyframes slowSpin {
+	0% {
+		transform: rotateY(0deg);
+	}
+	50% {
+		transform: rotateY(180deg);
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+</style>
+  </head>
+
+  <body>
+    <div class="dude">
+      <div><!--body-->
+        <div><!--neck-->
+					<div><!--head-->
+						<div><!--eye--></div>
+					</div>
+        </div>
+        <div><!--leftArm-->
+          <div><!--leftForearm-->
+            <div><!--leftHand--></div>
+          </div>
+				</div>
+				<div><!--rightArm-->
+          <div><!--rightForearm-->
+            <div><!--rightHand--></div>
+          </div>
+				</div>
+				<div><!--tumtum-->
+					<div><!--leftLeg-->
+						<div><!--leftShin-->
+							<div><!--leftFoot--></div>
+						</div>
+					</div>
+					<div><!--rightLeg-->
+						<div><!--rightShin-->
+							<div><!--rightFoot--></div>
+						</div>
+					</div>
+				</div>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>
